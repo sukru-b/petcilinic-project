@@ -45,9 +45,9 @@ services:
     labels:
       kompose.image-pull-secret: "regcred"
       kompose.service.expose: "{{ .Values.DNS_NAME }}"
-      kompose.service.expose.ingress-class-name: "nginx"
       kompose.service.type: "nodeport"
       kompose.service.nodeport.port: "30001"
+      kompose.service.expose.ingress-class-name: "nginx"
   tracing-server:
     image: openzipkin/zipkin
     ports:
